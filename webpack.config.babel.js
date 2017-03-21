@@ -16,6 +16,9 @@ const config = {
       exclude: /(node_modules)/,
       loader: 'babel-loader',
     }, {
+      test: /\.css$/,
+      use: 'css-loader',
+    }, {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
@@ -25,7 +28,7 @@ const config = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'dist/style.css',
+      filename: './dist/style.css',
     }),
   ],
 };
