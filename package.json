@@ -7,21 +7,28 @@
   "author": "Ibrahim Zahoor <ibrahimzahoor.nu@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --inline --hot",
+    "build": "webpack -p"
   },
   "dependencies": {
-    "eslint": "^3.17.0",
-    "html-webpack-plugin": "^2.28.0",
-    "path": "^0.12.7",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.23.0"
+    "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.27.3",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.15.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
   }
 }

@@ -1,22 +1,27 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
-
 module.exports = {
   entry: './index.js',
   output: {
-    path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+    filename: './dist/bundle.js'
   },
+  devtool: 'source-map',
   module: {
-    loaders: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
-    ]
-  },
-  plugins: [HtmlWebpackPluginConfig],
+    loaders: [{
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      loader: 'babel-loader',
+    }, {
+      test: /\.jsx$/,
+      exclude: /(node_modules)/,
+      loader: 'babel-loader',
+    }, {
+      test: /\.scss$/,
+      use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+      }, {
+          loader: "css-loader" // translates CSS into CommonJS
+      }, {
+          loader: "sass-loader" // compiles Sass to CSS
+      }]
+    }]
+  }
 }
