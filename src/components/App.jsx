@@ -1,4 +1,5 @@
 import React from 'react';
+import Textbox from './Textbox.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class App extends React.Component {
           <div className="col-6">
             <div className="text-center">
               Column 1
+              <Textbox rows={2} cols={10} />
             </div>
           </div>
           <div className="col-6">
