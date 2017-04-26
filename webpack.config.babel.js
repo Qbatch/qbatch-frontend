@@ -5,6 +5,10 @@ const config = {
   output: {
     filename: './dist/bundle.js',
   },
+  devServer: {
+    compress: true,
+    port: 9000
+  },
   devtool: 'source-map',
   module: {
     loaders: [{
